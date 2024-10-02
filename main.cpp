@@ -8,7 +8,7 @@
 #include <fstream>
 using namespace std;
 
-const int W15 = 15, SIZE = 3;  // Assuming size 3 for example, but can be adjusted
+const int W15 = 15;
 
 class Color {
 private:
@@ -18,14 +18,14 @@ private:
 
 public:
     // Default constructor
-    Color () : red (0), green (0), blue (0)  {}
+    Color () : red(0), green(0), blue(0) {}
 
     // Full paramater constructor
-    Color (int r, int g, int b) : red(r), green (g), blue (b) {}
+    Color (int r, int g, int b) : red(r), green(g), blue(b) {}
 
-    // Partial constructor
-    Color (int r) : red (r), green(0), blue (0) {}
-    Color (int r, int g) : red (r), green(g), blue (0) {}
+    // Two partial constructors
+    Color (int r) : red(r), green(0), blue(0) {}
+    Color (int r, int g) : red(r), green(g), blue(0) {}
 
     // Getters and setters
     int getRed()               { return red; }
@@ -46,10 +46,9 @@ public:
 int main() {
     // Create and populate Color objects
     Color color1;
-    Color color2;
-    Color color3;
-
-
+    Color color2 (14);
+    Color color3 (1, 250);
+    Color color4 (255, 100, 55);
 
     // Output using print method
     cout << "Color 1 values:\n";
@@ -59,6 +58,9 @@ int main() {
     color2.print();
 
     cout << "Color 3 values:\n";
+    color3.print();
+
+    cout << "Color 4 values:\n";
     color3.print();
 
     return 0;
