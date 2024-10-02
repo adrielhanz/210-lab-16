@@ -1,4 +1,4 @@
-// COMSC-210 | Lab 14 | Adriel Chandra
+// COMSC-210 | Lab 16 | Adriel Chandra
 // IDE used: Visual Studio Code
 
 #include <iostream>
@@ -17,6 +17,16 @@ private:
     int blue;
 
 public:
+    // Default constructor
+    Color () : red (0), green (0), blue (0)  {}
+
+    // Full paramater constructor
+    Color (int r, int g, int b) : red(r), green (g), blue (b) {}
+
+    // Partial constructor
+    Color (int r) : red (r), green(0), blue (0) {}
+    Color (int r, int g) : red (r), green(g), blue (0) {}
+
     // Getters and setters
     int getRed()               { return red; }
     void setRed(int r)         { red = r; }
@@ -35,12 +45,11 @@ public:
 
 int main() {
     // Create and populate Color objects
-    Color color1, color2, color3;
+    Color color1;
+    Color color2;
+    Color color3;
 
-    // Populate colors using setter methods
-    color1.setRed(255);  color1.setGreen(0);    color1.setBlue(0);   // Red
-    color2.setRed(0);    color2.setGreen(255);  color2.setBlue(0);   // Green
-    color3.setRed(0);    color3.setGreen(0);    color3.setBlue(255); // Blue
+
 
     // Output using print method
     cout << "Color 1 values:\n";
